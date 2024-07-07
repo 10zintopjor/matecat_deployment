@@ -24,4 +24,5 @@ services:
       - ./app:/app
     ports:
       - "8080:80"
-    command: apache2-foreground # Start Apache2 service when the container starts
+    # Command to start Apache2 service in the foreground
+    command: apache2ctl -D FOREGROUND

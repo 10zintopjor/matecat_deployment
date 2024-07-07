@@ -6,14 +6,12 @@ ENV DEBIAN_FRONTEND=noninteractive
 
 # Update package list and install packages
 RUN apt-get update && apt-get install -y \
-    curl \
-    wget \
-    git \
-    vim \
-    apache2 
+    apache2 \
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/*
 
-# Set the working directory
-WORKDIR /app
+# Expose port 80 (default port for Apache2)
+EXPOSE 80
 
-# Start Apache2 service (optional, adjust as needed)
-CMD service apache2 start && tail -f /dev/null
+# Start Apache2 service when the container starts
+CMD ["apache2ctl", "-D", "FOREGROUND"]

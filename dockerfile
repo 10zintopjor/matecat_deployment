@@ -12,9 +12,8 @@ RUN apt-get update && apt-get install -y \
     vim \
     apache2 
 
-
 # Set the working directory
-WORKDIR  /app
+WORKDIR /app
 
-# Command to keep the container running
-CMD ["tail", "-f", "/dev/null"]
+# Start Apache2 service (optional, adjust as needed)
+CMD service apache2 start && tail -f /dev/null

@@ -24,4 +24,4 @@ services:
       - ./app:/app
     ports:
       - "8080:80"
-    command: tail -f /dev/null # Keeps the container running for testing/exec into it
+    command: apache2-foreground # Start Apache2 service when the container starts

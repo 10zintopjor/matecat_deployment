@@ -10,10 +10,11 @@ RUN apt-get update && apt-get install -y \
     wget \
     git \
     vim \
-    apache2 \
+    apache2 
+
 
 # Set the working directory
-WORKDIR /app
+WORKDIR  /app
 
 # Command to keep the container running
 CMD ["tail", "-f", "/dev/null"]

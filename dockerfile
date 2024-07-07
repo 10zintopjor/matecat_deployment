@@ -10,14 +10,7 @@ RUN apt-get update && apt-get install -y \
     wget \
     git \
     vim \
-    python3 \
     apache2 \
-    python3-pip \
-    build-essential \
-    software-properties-common \
-    mysql-client \
-    && apt-get clean \
-    && rm -rf /var/lib/apt/lists/*
 
 # Set the working directory
 WORKDIR /app

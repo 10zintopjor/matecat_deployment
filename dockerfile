@@ -15,8 +15,5 @@ RUN apt-get update && apt-get install -y \
 # Set the working directory
 WORKDIR /app
 
-# Copy any additional scripts or files if needed
-# COPY your-script.sh /app/
-
 # Command to keep the container running
 CMD ["tail", "-f", "/dev/null"]

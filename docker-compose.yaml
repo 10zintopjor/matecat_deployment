@@ -1,28 +1,13 @@
 version: "3.3"
 services:
-  mysql:
-    image: mysql:5.7
-    container_name: mysql
-    restart: always
-    environment:
-      MYSQL_DATABASE: wordpress
-      MYSQL_ROOT_PASSWORD: "coffee"
-    ports:
-      - "3306:3306"
-    volumes:
-      - ./mysql:/var/lib/mysql
-
   ubuntu:
     build:
       context: .
       dockerfile: Dockerfile
     container_name: ubuntu
     restart: always
-    depends_on:
-      - mysql
     volumes:
       - ./app:/app
     ports:
       - "8080:80"
-    # Command to start Apache2 service in the foreground
     command: apache2ctl -D FOREGROUND

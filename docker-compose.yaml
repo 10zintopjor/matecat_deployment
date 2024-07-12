@@ -8,6 +8,5 @@ services:
     restart: always
     volumes:
       - ./app:/app
-    ports:
-      - "8080:80"
+    network_mode: host
     command: apache2ctl -D FOREGROUND
